@@ -1,0 +1,22 @@
+import java.util.*;
+class  Main{
+    public static void main(String[] args) {
+     Main s= new Main();
+     int result=s.Calculatesum();
+     System.out.println(result);
+    
+    }
+    int Calculatesum()
+    {
+        Scanner input=new Scanner(System.in);
+        int a=input.nextInt();
+        int b=input.nextInt();
+        return a+b;
+    }
+}
+**************************************************
+OUTPUT:
+6
+7
+13
+**************************************************
