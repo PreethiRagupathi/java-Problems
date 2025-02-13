@@ -1,0 +1,102 @@
+class Book{
+    private String isbn;
+    private String title;
+    private String author;
+    private int copies;
+    private static int totalbooks=0;
+    public book()
+{
+       isbn=num;
+       title=titles;
+       author=auth;
+       copies=copy;
+       totalBooks++;
+}
+public void displaybook()
+{
+system.out.println(isbn);
+system.out.println(title);
+system.out.println(author);
+system.out.println(copies);
+}
+public static int getTotalBooks()
+{
+return totalbooks;
+}
+
+}
+class Member
+
+{
+private static int idcounts=1000;
+private int m.id;
+private String name;
+private String email;
+private static int Totalmrs=0;
+
+public Member (String num,String mail)
+{
+this.m.id=++idcounts;
+name=nm;
+email=mail;
+totalmrs++;
+}
+public void displayMember()
+{
+system.out.println("member ID:" +m.id);
+system.out.println("name:" +name);
+system.out.println("Email:" +email);
+}
+public static int getTotalMembers()
+{
+return totalMembers;
+}
+
+}
+public class LibrarySystem{
+      public static void main(string args[])
+{
+Book b1=new Book("123","java","Gosing",5);
+Book b2=new Book("321","OOP","Robert",3);
+Member m1=new Member("alice","alice@gmail.com");
+Member m2=new Member("bob","bob@gmail.com");
+b1.displaybook();
+b2.displaybook();
+m1.displayMember();
+m2.displayMember();
+system.out.println("Total books:"+Bppk.getTotalBooks());
+system.out.println("Total Members:"+Members.getTotalMrs())
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
