@@ -1,0 +1,62 @@
+class BankAccount{
+    private String accountNumber;
+    private String accountHolder;
+    private double balance;
+    public BankAccount(String accountNumber,String accountHolder,double balance){
+        this.accountNumber = accountNumber;
+        this.accountHolder = accountHolder;
+        this.balance = balance;
+        public void display Account Details()
+        {
+            System.out.println("Account Number:"+accountNumber);
+            System.out.println("Account Holder:"+accountHolder);
+            System.out.println("current balance:"+balance);
+            system.out.println("______________________________");
+        }
+        public void deposit(double amount)
+        {
+            if(amount>0){
+                balance+=amount;
+                system.out.println("Deposited $"+ amount +"into"+accountNumber);
+            }
+            else{
+                system.out.println("Invalid deposited amount");
+            }
+        }
+        public boolean withdraw(double amount)
+        {
+            if(amount>0&&amount<=balance)
+            {
+                balance-=amount;
+                system.out.println("withdrawn $"+ amount + "from"+accountNumber);
+                return true;
+            }else{
+                system.out.println("Insufficient funds or Invalid amount.");
+                return false;
+            }
+        }
+        public boolean transferfunds(BankAccount receiver,double amount)
+        {
+            if(withdraw(amount))
+            {
+                receiver.deposit(amount);
+                System.out.println("Transfer Successful:$"+amount+"from"+thisaccountNumber+"to"+receiver.accountNumber);
+                return true;
+            }
+            return false;
+        }
+    }
+}
+public class BankSystem {
+    public static void main(String[] args){
+        BankAccount acc1 = new  BankAccount("123456","Alice",5000);
+        BankAccount acc2 = new  BankAccount("654321","Bob",3000);
+        acc1.displayAccountDetails();
+        acc2.displayAccountDetails();
+        system.out.println("Attempting Fund Transfer...");
+        acc1.transferFunds(acc2,1500);
+        system.out.println("Updated Account Details:");
+        acc1.displayAccountDetails();
+        acc2.displayAccountDetails();
+    }
+}
