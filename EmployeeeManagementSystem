@@ -1,0 +1,67 @@
+abstract class Employee
+{
+	String name;
+	int empId;
+	double basicsalary;
+  public Employee(String name,int empId,double basicsalary)
+  {
+ 	this.name=name;
+	this.empId=empId;
+	this.basicsalary=basicsalary;
+  }
+  abstract double calculatesalary();
+  public void displaySalaryDetails()
+  {
+	System.out.println("Name:"+name);
+	System.out.println("Employee ID:"+empId);
+	System.out.println("salary:"+calculatesalary());
+
+  }
+}
+
+class FullTimeEmployee extends Employee
+{
+  public FullTimeEmployee(String name,int empId,double basicsalary)
+  {
+	super(name,empId,basicsalary);
+  }
+  double calculatesalary()
+  {
+	return basicsalary+(0.2 * basicsalary);
+  }
+}
+ 
+class PartTimeEmployee extends Employee
+{
+	double hoursrate;
+	int hoursworked;
+  public PartTimeEmployee(String name,int empId,double basicsalary,double hoursrate,int hoursworked)
+  {
+	super(name,empId,basicsalary);
+	this.hoursrate=hoursrate;
+	this.hoursworked=hoursworked;
+  }
+  double calculatesalary()
+  {
+  return basicsalary+(hoursrate*hoursworked);
+  }
+  public void displaySalaryDetails()
+  {
+	super.displaySalaryDetails();
+	System.out.println("Hours rate:"+hoursrate);
+	System.out.println("hours worked:"+hoursworked);
+
+  }
+}
+
+public class EmployeeeManagementSystem
+{
+   public static void main(String args[])
+   {
+	FullTimeEmployee fe=new FullTimeEmployee("John",101,50000);
+	PartTimeEmployee pe=new PartTimeEmployee("Jane smith",102,30000,150,80);
+	fe.displaySalaryDetails();
+	System.out.println("--------------------------------");
+	pe.displaySalaryDetails();
+  }
+}
