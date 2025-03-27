@@ -55,3 +55,16 @@ class VehicleRentalSystem
 	v2.displayrentaldetails(5);
    }
 }
+
+OUTPUT:
+
+Car Rental Details
+Vehicle Number:C123
+Brand:TOYOTA
+Daily Rate:50.0
+Total Rent for5days : $250.0
+Bike Rental Details
+Vehicle Number:b456
+Brand:HONDA
+Daily Rate:20.0
+Total Rent for5days : $90.0
