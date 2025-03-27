@@ -1,0 +1,57 @@
+abstract class Vehicle
+{
+   String Vehiclenumber;
+   String brand;
+   double dailyrate;
+   public Vehicle(String Vehiclenumber,String brand,double dailyrate)
+   {
+	this.Vehiclenumber=Vehiclenumber;
+	this.brand=brand;
+	this.dailyrate=dailyrate;
+   }
+   abstract double calculaterent(int days);
+   public void displayrentaldetails(int days)
+   {
+	System.out.println("Vehicle Number:"+Vehiclenumber);
+	System.out.println("Brand:"+brand);
+	System.out.println("Daily Rate:"+dailyrate);
+	System.out.println("Total Rent for"+days+"days : $"+calculaterent(days));
+   }
+}
+
+class Car extends Vehicle
+{
+   public Car(String Vehiclenumber,String brand,double dailyrate)
+   {
+	super(Vehiclenumber,brand,dailyrate);
+   }
+   double calculaterent(int days)
+   {
+	return dailyrate*days;
+   }
+}
+
+class Bike extends Vehicle
+{
+   public Bike(String Vehiclenumber,String brand,double dailyrate)
+   {
+	super(Vehiclenumber,brand,dailyrate);
+   }
+   double calculaterent(int days)
+   {
+	double totalrent=dailyrate*days;
+	return totalrent-(totalrent*0.10);
+   }
+}
+class VehicleRentalSystem
+{
+   public static void main(String main[])
+   {
+	Vehicle v1=new Car("C123","TOYOTA",50.0);
+	Vehicle v2=new Bike("b456","HONDA",20.0);
+	System.out.println("Car Rental Details");
+	v1.displayrentaldetails(5);
+	System.out.println("Bike Rental Details");
+	v2.displayrentaldetails(5);
+   }
+}
