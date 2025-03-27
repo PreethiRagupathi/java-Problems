@@ -65,3 +65,15 @@ public class EmployeeeManagementSystem
 	pe.displaySalaryDetails();
   }
 }
+OUTPUT:
+
+Name:John
+Employee ID:101
+salary:60000.0
+--------------------------------
+Name:Jane smith
+Employee ID:102
+salary:42000.0
+Hours rate:150.0
+hours worked:80
+
