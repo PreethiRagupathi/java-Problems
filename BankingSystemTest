@@ -1,0 +1,80 @@
+abstract class Bankaccount
+{
+	String accountNo;
+	String holderName;
+	double balance;
+  public Bankaccount(String accountNo,String holderName,double balance)
+  {
+	this.accountNo=accountNo;
+	this.holderName= holderName;
+	this.balance= balance;
+  }
+  abstract double calculateInterest();
+  public void deposit(double amount)
+  {
+	balance+=amount;
+	System.out.println("Deposited $:"+amount+"\nNew amount $:"+balance);
+  }
+  public void withdraw(double amount)
+  {
+	if(balance>=amount)
+	{
+	balance-=amount;
+	System.out.println("withdraw :$"+amount+"\nRemaining balance :$"+balance);
+	}
+	else
+	{
+	System.out.println("Insufficient funds");
+	}
+  }
+  public void displayDetails()
+  {
+	System.out.println("AccountNumber:"+accountNo);
+	System.out.println("Account Holder Name:"+holderName);
+	System.out.println("Balance $:"+balance);
+	System.out.println("Interest $:"+calculateInterest());
+  }
+}
+
+class SavingsAccount extends Bankaccount
+{
+  SavingsAccount(String accountNo,String holderName,double balance)
+  {
+	super(accountNo,holderName,balance);
+  }
+  double calculateInterest()
+  {
+	return balance*0.04;
+  }
+}
+
+class CurrentAccount extends Bankaccount
+{
+  CurrentAccount(String accountNo,String holderName,double balance)
+  {
+	super(accountNo,holderName,balance);
+  }
+   double calculateInterest()
+  {
+	return balance*0.02;
+  }
+}
+
+class BankingSystemTest
+{
+   public static void main (String[] args)
+   {
+	SavingsAccount savings=new SavingsAccount("SA123","Alice",1000);
+	CurrentAccount current=new CurrentAccount("CA456","Bob",2000);
+	System.out.println("\n Savings Account details");
+	savings.displayDetails();
+	savings.deposit(500);
+	savings.withdraw(300);
+	System.out.println("\n Current Account details");
+	current.displayDetails();
+	current.deposit(1000);
+	current.withdraw(500);
+   }
+}
+
+	
