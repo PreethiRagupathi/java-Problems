@@ -76,5 +76,24 @@ class BankingSystemTest
 	current.withdraw(500);
    }
 }
+OUTPUT:
 
-	
+Savings Account details
+AccountNumber:SA123
+Account Holder Name:Alice
+Balance $:1000.0
+Interest $:40.0
+Deposited $:500.0
+New amount $:1500.0
+withdraw :$300.0
+Remaining balance :$1200.0
+
+ Current Account details
+AccountNumber:CA456
+Account Holder Name:Bob
+Balance $:2000.0
+Interest $:40.0
+Deposited $:1000.0
+New amount $:3000.0
+withdraw :$500.0
+Remaining balance :$2500.0
